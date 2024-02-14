@@ -1,10 +1,10 @@
 {% extends "base.html.twig" %}
-{% block title %}Poste N°{{ article.id }}!{% endblock %}
+{% block title %}Poste N°{{ article.id }}{% endblock %}
 {% block body %}
-    <h1>Blog N°{{ article.id }}</h1>
+    <h1>Poste N°{{ article.id }}</h1>
     <p class="content">{{ article.contenu }}</p>
     {% if article.image != "" %}
-        <img src="{{ article.image }}" alt="image">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="{{ article.image }}" alt="image"></a>
     {% endif %}
     {% if article.auteur != "" %}
         <p class="autor">{{ article.auteur }}</p>
