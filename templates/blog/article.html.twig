@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+{% block title %}Poste N°{{ article.id }}!{% endblock %}
+{% block body %}
+    <h1>Blog N°{{ article.id }}</h1>
+    <p class="content">{{ article.contenu }}</p>
+    {% if article.image != "" %}
+        <img src="{{ article.image }}" alt="image">
+    {% endif %}
+    {% if article.auteur != "" %}
+        <p class="autor">{{ article.auteur }}</p>
+    {% else %}
+        <p class="autor">Anonyme</p>
+    {% endif %}
+    <a class="btn" href="/blog">Return to home</a>
+{% endblock %}

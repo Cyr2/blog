@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block title %}Accueil !{% endblock %}
+{% block body %}
+    <h1>Blog List</h1>
+    <ul>
+        {% for article in articles %}
+            <li>
+                <h2>{{ article.titre }}</h2>
+                <a class="more" href="/blog/{{ article.id }}">En savoir plus</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a class="btn" href="/blog/add">New blog</a>
+{% endblock %}

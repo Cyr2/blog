@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block title %}Nouveau post !{% endblock %}
+{% block body %}
+    <h1>New Blog</h1>
+    {{ form_start(form) }}
+    <div>
+        {{ form_label(form.titre) }}
+        {{ form_widget(form.titre) }}
+    </div>
+    <div>
+        {{ form_label(form.contenu) }}
+        {{ form_widget(form.contenu) }}
+    </div>
+    <div>
+        {{ form_label(form.image) }}
+        {{ form_widget(form.image) }}
+    </div>
+    <div>
+        {{ form_label(form.auteur) }}
+        {{ form_widget(form.auteur) }}
+    </div>
+    <div>
+        <input class="btn" type="submit" value="Poster !" />
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
