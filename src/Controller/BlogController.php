@@ -18,9 +18,14 @@ class BlogController extends AbstractController
     {
     }
 
+    #[Route('/', name: 'index')]
+    public function index(): Response
+    {
+        return $this->redirectToRoute('blog');
+    }
     #[Route('/blog', name: 'blog')]
     #[IsGranted('IS_AUTHENTICATED_FULLY')]
-    public function index(): Response
+    public function blog(): Response
     {
         $articles = $this->articleRepository->findAll();
         return $this->render('blog/index.html.twig', ['articles' => $articles]);
