@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 class BlogController extends AbstractController
 {
@@ -18,6 +19,7 @@ class BlogController extends AbstractController
     }
 
     #[Route('/blog', name: 'blog')]
+    #[IsGranted('IS_AUTHENTICATED_FULLY')]
     public function index(): Response
     {
         $articles = $this->articleRepository->findAll();
